@@ -11,20 +11,3 @@ Creature::Creature() :  m_points( 0 ), alive(true), shootable(false)
 {
 //ctor
 }
-
-void Creature::draw(sf::RenderTarget& target, sf::RenderStates states) const
-{
-    //TODO shape name
-    if(alive)
-        target.draw(shape);
-}
-
-void Creature::move(float offsetX, float offsetY)
-{
-    shape.move(offsetX, offsetY);
-}
-
-void Creature::move(const sf::Vector2f &offset)
-{
-    shape.move(offset);
-}

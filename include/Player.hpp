@@ -7,14 +7,13 @@
 
 #include "Bullet.hpp"
 
-class Player : public sf::Drawable
+class Player : public sf::Sprite
 {
     public:
         static int totalScore;
         Player();
 
         void control(const sf::Event &event);
-        virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
     private:
 
@@ -26,7 +25,6 @@ class Player : public sf::Drawable
         void shoot();
 
         sf::Texture tx_player;
-        sf::Sprite shape;
         //m_speed must be divider of 640
         const int m_speed = 10;
 
