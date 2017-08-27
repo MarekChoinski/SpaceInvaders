@@ -7,11 +7,10 @@
 //    //shape.setSize( {sizeOfCreature.x, sizeOfCreature.y} );
 //}
 
-Creature::Creature() : alive(true), m_points( 0 )
+Creature::Creature() :  m_points( 0 ), alive(true), shootable(false)
 {
 //ctor
 }
-
 
 void Creature::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
@@ -29,4 +28,3 @@ void Creature::move(const sf::Vector2f &offset)
 {
     shape.move(offset);
 }
-

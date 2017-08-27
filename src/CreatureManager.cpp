@@ -209,36 +209,41 @@ void CreatureManager::setDirectionOfCreatures()
             if(creature[i][ getMostLeft() ].getPosition().x<=0)
             {
                m_direction = Direction::right;
-
-               std::thread thr_gl([=]{goLower();});
-               thr_gl.detach();
+               goLower(m_direction);
             }
 
             else if(creature[i][ getMostRight() ].getPosition().x>=640-sizeOfCreature.x)
             {
               m_direction = Direction::left;
-
-              std::thread thr_gl([=]{goLower();});
-               thr_gl.detach();
+              goLower(m_direction);
             }
         }
 
 }
 
-void CreatureManager::goLower()
+void CreatureManager::goLower(CreatureManager::Direction direction)
 {
-    //TODO this should be range based
-        for(int i=4; i>=0; i--)
+
+    for(int i=0; i<5; i++)
         {
             for(int j=0; j<11; j++)
             {
                 if(creature[i][j].isAlive())
                 {
-                    creature[i][j].move(0, m_lower_step);
+                    if(direction == Direction::right)
+                    creature[i][j].move(m_step, m_lower_step);
+
+                    else if(direction == Direction::left)
+                    creature[i][j].move(-1 * m_step, m_lower_step);
                 }
 
             }
-            sf::sleep(sf::milliseconds(m_move_delay));
-
+        sf::sleep(sf::milliseconds(m_move_delay));
         }
+
 }
+
+//void heightCorrection()
+//{
+//
+//}

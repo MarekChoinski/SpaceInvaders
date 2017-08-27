@@ -31,7 +31,7 @@ class CreatureManager : public sf::Drawable
         //function used in thread
         void checkCollisions();
 
-        void goLower();
+        void goLower(CreatureManager::Direction direction);
 
         Direction m_direction;
         bool m_isFirstTexture;
