@@ -22,7 +22,7 @@ class Creature : public sf::Sprite
 
 
         bool isShootable() const { return this->shootable; };
-        void setIfShootable(bool i_shootable) { this->shootable = i_shootable; };
+        void setShootable(bool i_shootable) { this->shootable = i_shootable; };
 
     private:
 

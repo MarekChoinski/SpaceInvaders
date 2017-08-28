@@ -30,6 +30,7 @@ class CreatureManager : public sf::Drawable
         void setDirectionOfCreatures();
         //function used in thread
         void checkCollisions();
+        void setShootableCreatures();
 
         void goLower(CreatureManager::Direction direction);
 

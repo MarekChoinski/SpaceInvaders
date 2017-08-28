@@ -83,6 +83,8 @@ void CreatureManager::motion()
         //TODO should get local by reference, not member
         animateCreatures();
 
+        setShootableCreatures();
+
     //TODO idk if neccesary
     sf::sleep(sf::milliseconds(m_move_delay));
     }
@@ -243,7 +245,20 @@ void CreatureManager::goLower(CreatureManager::Direction direction)
 
 }
 
-//void heightCorrection()
-//{
-//
-//}
+void CreatureManager::setShootableCreatures()
+{
+    //for every column set the most low creature shootable
+    for(int i=0; i<11 ;i++)
+    {
+        for(int j=4; j>=0; j--)
+        {
+            if(creature[j][i].isAlive())
+            {
+                creature[j][i].setShootable(true);
+                creature[j][i].setColor(sf::Color::Red);//TODO debug
+                break;
+            }
+
+        }
+    }
+}

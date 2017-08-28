@@ -1,7 +1,6 @@
 #include "Bullet.hpp"
 
 const sf::Vector2f Bullet::sizeOfBullet = { 3.f, 7.f };
-//int Bullet::bulletCount;
 std::vector<sf::RectangleShape> Bullet::bullets;
 
 Bullet::Bullet()

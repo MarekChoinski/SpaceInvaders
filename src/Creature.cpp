@@ -7,7 +7,10 @@
 //    //shape.setSize( {sizeOfCreature.x, sizeOfCreature.y} );
 //}
 
-Creature::Creature() :  m_points( 0 ), alive(true), shootable(false)
+Creature::Creature() :
+m_points( 0 ),
+alive(true),
+shootable(false)
 {
 //ctor
 }
